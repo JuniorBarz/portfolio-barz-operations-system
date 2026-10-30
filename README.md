@@ -2,6 +2,14 @@
 
 Painel operacional responsivo para acompanhar uma frota de telas, programações de conteúdo e alertas. Esta edição foi criada do zero com dados totalmente sintéticos e funciona sem servidor, dependências ou conexão de rede.
 
+## Demonstração
+
+![Painel Operations em desktop](docs/screenshots/operations-desktop.jpg)
+
+![Painel Operations em viewport mobile](docs/screenshots/operations-mobile.jpg)
+
+As capturas acima foram geradas diretamente desta demonstração local. Elas mostram o mesmo cenário sintético em viewports desktop e mobile, sem dados de clientes ou serviços internos.
+
 ## Problema
 
 Uma operação com várias telas precisa responder rapidamente a três perguntas: o que está online, o que está reproduzindo e onde existe uma exceção que exige ação. Misturar configuração, análise e alertas em uma única superfície aumenta o tempo de resposta e a chance de erro.
