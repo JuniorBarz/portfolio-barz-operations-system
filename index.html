@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demonstração sintética de um painel operacional para portfólio.">
+  <title>Barz Operations — demonstração de portfólio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">B</span><span>Barz <strong>Ops</strong></span></div>
+      <nav>
+        <p class="nav-label">Operação</p>
+        <button type="button" data-nav-target="#overview" aria-current="page"><span aria-hidden="true">⌂</span>Visão geral</button>
+        <button type="button" data-nav-target="#fleet"><span aria-hidden="true">▣</span>Telas</button>
+        <button type="button" data-nav-target="#schedules"><span aria-hidden="true">◫</span>Programações</button>
+        <p class="nav-label">Análise</p>
+        <button type="button" data-nav-target="#activity"><span aria-hidden="true">⌁</span>Atividade</button>
+        <button type="button" data-nav-target="#alerts"><span aria-hidden="true">◇</span>Alertas <span class="nav-count">2</span></button>
+      </nav>
+      <div class="portfolio-note"><span aria-hidden="true">◎</span><p><strong>Ambiente de portfólio</strong><small>Dados totalmente sintéticos</small></p></div>
+    </aside>
+
+    <main id="main-content">
+      <header class="topbar">
+        <div><p class="eyebrow">Central de operações</p><h1>Visão geral</h1></div>
+        <div class="topbar-actions"><span class="environment"><i aria-hidden="true"></i><span data-environment>Cenário demonstrativo</span></span><button class="primary-button" type="button" data-open-schedule><span aria-hidden="true">＋</span>Nova programação</button></div>
+      </header>
+
+      <section id="overview" aria-labelledby="overview-title">
+        <div class="section-heading"><div><p class="eyebrow">Agora</p><h2 id="overview-title">Saúde da operação</h2></div><p>Leitura consolidada do cenário local.</p></div>
+        <div class="metric-grid">
+          <article class="metric-card"><span class="metric-icon teal" aria-hidden="true">▣</span><div><p>Telas cadastradas</p><strong data-metric="screens">0</strong><small>3 grupos demonstrativos</small></div></article>
+          <article class="metric-card"><span class="metric-icon green" aria-hidden="true">●</span><div><p>Disponibilidade</p><strong data-metric="online">0%</strong><small class="positive">5 telas respondendo</small></div></article>
+          <article class="metric-card"><span class="metric-icon blue" aria-hidden="true">▶</span><div><p>Em reprodução</p><strong data-metric="playing">0</strong><small>conteúdo ativo agora</small></div></article>
+          <article class="metric-card attention-card"><span class="metric-icon amber" aria-hidden="true">!</span><div><p>Requer atenção</p><strong data-metric="attention">0</strong><small>ação recomendada</small></div></article>
+        </div>
+      </section>
+
+      <div class="dashboard-grid">
+        <section class="panel activity-panel" id="activity" aria-labelledby="activity-title">
+          <div class="panel-heading"><div><p class="eyebrow">Últimas 12 horas</p><h2 id="activity-title">Atividade da frota</h2></div><span class="trend"><span aria-hidden="true">↗</span> +8% hoje</span></div>
+          <div class="activity-chart" data-activity-bars role="img" aria-label="Gráfico de barras com atividade operacional das últimas doze horas"></div>
+          <div class="chart-axis" aria-hidden="true"><span>03h</span><span>06h</span><span>09h</span><span>12h</span><span>15h</span></div>
+          <p class="chart-summary">Pico de 96% de atividade, sem lacunas de reprodução no período.</p>
+        </section>
+
+        <section class="panel" id="schedules" aria-labelledby="schedules-title">
+          <div class="panel-heading"><div><p class="eyebrow">Conteúdo</p><h2 id="schedules-title">Programações</h2></div><button class="text-button" type="button" data-open-schedule>Adicionar</button></div>
+          <ul class="schedule-list" data-schedule-list></ul>
+        </section>
+      </div>
+
+      <section class="panel fleet-panel" id="fleet" aria-labelledby="fleet-title">
+        <div class="fleet-header"><div><p class="eyebrow">Monitoramento</p><h2 id="fleet-title">Telas</h2><p data-screen-count>0 telas</p></div><label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar tela</span><input type="search" placeholder="Buscar tela ou grupo" data-search></label></div>
+        <div class="filter-row" role="group" aria-label="Filtrar telas por estado"><button type="button" aria-pressed="true" data-filter="all">Todas</button><button type="button" aria-pressed="false" data-filter="online">Online</button><button type="button" aria-pressed="false" data-filter="attention">Atenção</button></div>
+        <div class="table-scroll">
+          <table>
+            <caption>Estado das telas no cenário demonstrativo</caption>
+            <thead><tr><th scope="col">Tela</th><th scope="col">Status</th><th scope="col">Reprodução</th><th scope="col">Armazenamento</th><th scope="col">Atualização</th><th scope="col"><span class="sr-only">Ações</span></th></tr></thead>
+            <tbody data-screen-rows></tbody>
+          </table>
+          <p class="empty-state" data-empty-state hidden>Nenhuma tela corresponde aos filtros selecionados.</p>
+        </div>
+      </section>
+
+      <section class="panel alerts-panel" id="alerts" aria-labelledby="alerts-title">
+        <div class="panel-heading"><div><p class="eyebrow">Acompanhamento</p><h2 id="alerts-title">Alertas recentes</h2></div><span class="subtle-badge">2 abertos</span></div>
+        <div class="alert-list"><article><span class="alert-symbol warning" aria-hidden="true">!</span><div><strong>Tela sem resposta</strong><p>Sul · Entrada · há 18 minutos</p></div><button type="button" class="text-button" data-demo-action="details">Ver detalhes</button></article><article><span class="alert-symbol info" aria-hidden="true">↻</span><div><strong>Sincronização em andamento</strong><p>Norte · Espera · 3 itens restantes</p></div><button type="button" class="text-button" data-demo-action="details">Acompanhar</button></article></div>
+      </section>
+
+      <footer><p>Demonstração local para portfólio · sem conexão com sistemas ou dados reais.</p></footer>
+    </main>
+  </div>
+
+  <dialog data-schedule-dialog aria-labelledby="dialog-title">
+    <form method="dialog" data-schedule-form>
+      <div class="dialog-heading"><div><p class="eyebrow">Demonstração local</p><h2 id="dialog-title">Nova programação</h2></div><button class="icon-button" type="button" data-close-schedule aria-label="Fechar">×</button></div>
+      <label>Nome<input name="name" required maxlength="60" placeholder="Ex.: Campanha de primavera"></label>
+      <label>Janela de exibição<input name="window" required maxlength="60" placeholder="Ex.: Amanhã · 09:00"></label>
+      <p class="dialog-note">Nada será enviado. A programação existe apenas na memória desta página.</p>
+      <div class="dialog-actions"><button class="secondary-button" type="button" data-close-schedule>Cancelar</button><button class="primary-button" type="submit">Adicionar à demonstração</button></div>
+    </form>
+  </dialog>
+  <div class="sr-only" aria-live="polite" data-live-region></div>
+  <script src="demo-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
